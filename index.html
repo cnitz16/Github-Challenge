@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/bb69f08966.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+    <link rel="stylesheet" href="src/style.css" />
+</head>
+<section>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <form id="discover-search">
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-control" placeholder="Type in city..." id="search-city" />
+                            <div class="input-group-append">
+                                <input type="submit" class="btn btn-dark" value="Discover" />
+                                <div class="input-group-append">
+                                    <input type="submit" class="btn btn-warning" value="Current Location"
+                                        id="currentLocation" />
+                                </div>
+                            </div>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <h5>
+                        "Climate is what we expect, weather is what we get."
+                        <br />
+                        -Mark Twain
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h4 id="city-name">Boston, Massachusetts</h4>
+                <p class="currentDayAndTime">9/23/2020</p>
+                <ul>
+                    <li id="highTemp">High: 69°</li>
+                    <li id="lowTemp">Low: 49°</li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <img src="images/cloudy.svg" alt="cloudy" width="140px" />
+            </div>
+            <span class="main-temp">
+                <div class="col-4">
+                    <p id="something">68°</p>
+                </div>
+            </span>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-3">
+                <div class="p-4 mb-2 bg-info rounded shadow text-black">
+                    <h5 class="real-feel">Real Feel</h5>
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text" id="realFeel">67°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="p-4 mb-2 bg-primary rounded shadow text-black">
+                    <h5 class="current-humidity">Humidity</h5>
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text" id="humidityLevel">15%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="p-4 mb-2 bg-warning rounded shadow text-black">
+                    <h5 class="wind-speed">Wind</h5>
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text" id="windSpeed">7mph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="p-4 mb-2 bg-success rounded shadow text-black">
+                    <h5 class="current-pressure">Pressure</h5>
+                    <div class="row">
+                        <div class="col-4">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text" id="pressureLevel">1015hPa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <span class="weekly">
+            <div class="row">
+                <div class="col">
+                    <h6>Thursday 9.24</h6>
+                    <img src="images/sunshine.svg" alt="sunshine" width="50px" />
+                    <h4>77°</h4>
+                    <h6>54°</h6>
+                </div>
+                <div class="col">
+                    <h6>Friday 9.25</h6>
+                    <img src="images/rain.svg" alt="rain" width="50px" />
+                    <h4>81°</h4>
+                    <h6>55°</h6>
+                </div>
+                <div class="col">
+                    <h6>Saturday 9.26</h6>
+                    <img src="images/cloudy.svg" alt="cloudy" width="50px" />
+                    <h4>79°</h4>
+                    <h6>64°</h6>
+                </div>
+                <div class="col">
+                    <h6>Sunday 9.27</h6>
+                    <img src="images/rain.svg" alt="rain" width="50px" />
+                    <h4>79°</h4>
+                    <h6>63°</h6>
+                </div>
+                <div class="col">
+                    <h6>Monday 9.28</h6>
+                    <img src="images/sunshine.svg" alt="sunshine" width="50px" />
+                    <h4>75°</h4>
+                    <h6>57°</h6>
+                </div>
+            </div>
+        </span>
+        <script src="src/interactions.js"></script>
+    </body>
+</section>
+
+</html>
