@@ -1,0 +1,42 @@
+section {
+  background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+  max-width: 1200px;
+  border: 1px solid black;
+  margin: 75px;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+.precipitation-card {
+  border: 3px solid #416182;
+  border-radius: 15px;
+  background: #6087b0;
+  color: white;
+  box-shadow: 10px 5px 5px #c6d9e3;
+}
+.main-temp {
+  font-size: 95px;
+}
+
+.btn-outline-secondary {
+  background: gray;
+  color: black;
+}
+
+.weekly {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 15px 10px 40px;
+}
+
+.col-7 {
+  padding-left: 53px;
+}
+
+ul {
+  list-style: none;
+}
