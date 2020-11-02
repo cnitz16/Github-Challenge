@@ -86,6 +86,13 @@ function search(event) {
     let currentPressureLevels = document.querySelector("#pressureLevel");
     currentPressureLevels.innerHTML = `${pressureLevels}hPa`;
   }
+  function showIcon(response) {
+    let currentIconStatus = document.querySelector("#icon");
+    currentIconStatus.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  }
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrl).then(showRealFeel);
   axios.get(apiUrl).then(showHumidity);
@@ -93,6 +100,7 @@ function search(event) {
   axios.get(apiUrl).then(showLow);
   axios.get(apiUrl).then(showWindSpeed);
   axios.get(apiUrl).then(showPressureLevels);
+  axios.get(apiUrl).then(showIcon);
 }
 let discoverButton = document.querySelector("#discover-search");
 discoverButton.addEventListener("submit", search);

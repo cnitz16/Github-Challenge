@@ -50,4 +50,5 @@ ul {
 h1 {
   font-size: 55px;
   margin-bottom: 0;
+  text-transform: capitalize;
 }
