@@ -86,6 +86,11 @@ function search(event) {
     let currentPressureLevels = document.querySelector("#pressureLevel");
     currentPressureLevels.innerHTML = `${pressureLevels}hPa`;
   }
+  function showWeatherConditions(response) {
+    let weatherConditions = response.data.weather[0].description;
+    let currentWeatherConditions = document.querySelector("#weatherconditions");
+    currentWeatherConditions.innerHTML = `${weatherConditions}`;
+  }
   function showIcon(response) {
     let currentIconStatus = document.querySelector("#icon");
     currentIconStatus.setAttribute(
@@ -100,6 +105,7 @@ function search(event) {
   axios.get(apiUrl).then(showLow);
   axios.get(apiUrl).then(showWindSpeed);
   axios.get(apiUrl).then(showPressureLevels);
+  axios.get(apiUrl).then(showWeatherConditions);
   axios.get(apiUrl).then(showIcon);
 }
 let discoverButton = document.querySelector("#discover-search");
