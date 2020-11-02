@@ -52,61 +52,26 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=imperial&appid=${apiKey}`;
 
   function showTemperature(response) {
-    let currentTemperature = Math.round(response.data.main.temp);
     let mainTemp = document.querySelector("#something");
-    mainTemp.innerHTML = `${currentTemperature}°`;
-  }
-  function showRealFeel(response) {
-    let feelsLike = Math.round(response.data.main.feels_like);
     let realFeel = document.querySelector("#realFeel");
-    realFeel.innerHTML = `${feelsLike}°`;
-  }
-  function showHumidity(response) {
-    let humidity = Math.round(response.data.main.humidity);
     let currentHumidity = document.querySelector("#humidityLevel");
-    currentHumidity.innerHTML = `${humidity}%`;
-  }
-  function showHigh(response) {
-    let highTemp = Math.round(response.data.main.temp_max);
-    let currentHighTemp = document.querySelector("#highTemp");
-    currentHighTemp.innerHTML = `High: ${highTemp}°`;
-  }
-  function showLow(response) {
-    let lowTemp = Math.round(response.data.main.temp_min);
-    let currentLowTemp = document.querySelector("#lowTemp");
-    currentLowTemp.innerHTML = `Low: ${lowTemp}°`;
-  }
-  function showWindSpeed(response) {
-    let windSpeed = Math.round(response.data.wind.speed);
     let currentWindSpeed = document.querySelector("#windSpeed");
-    currentWindSpeed.innerHTML = `${windSpeed}mph`;
-  }
-  function showPressureLevels(response) {
-    let pressureLevels = Math.round(response.data.main.pressure);
     let currentPressureLevels = document.querySelector("#pressureLevel");
-    currentPressureLevels.innerHTML = `${pressureLevels}hPa`;
-  }
-  function showWeatherConditions(response) {
-    let weatherConditions = response.data.weather[0].description;
     let currentWeatherConditions = document.querySelector("#weatherconditions");
-    currentWeatherConditions.innerHTML = `${weatherConditions}`;
-  }
-  function showIcon(response) {
     let currentIconStatus = document.querySelector("#icon");
+
+    mainTemp.innerHTML = Math.round(response.data.main.temp);
+    realFeel.innerHTML = Math.round(response.data.main.feels_like);
+    currentHumidity.innerHTML = Math.round(response.data.main.humidity);
+    currentWindSpeed.innerHTML = Math.round(response.data.wind.speed);
+    currentPressureLevels.innerHTML = Math.round(response.data.main.pressure);
+    currentWeatherConditions.innerHTML = response.data.weather[0].description;
     currentIconStatus.setAttribute(
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   }
   axios.get(apiUrl).then(showTemperature);
-  axios.get(apiUrl).then(showRealFeel);
-  axios.get(apiUrl).then(showHumidity);
-  axios.get(apiUrl).then(showHigh);
-  axios.get(apiUrl).then(showLow);
-  axios.get(apiUrl).then(showWindSpeed);
-  axios.get(apiUrl).then(showPressureLevels);
-  axios.get(apiUrl).then(showWeatherConditions);
-  axios.get(apiUrl).then(showIcon);
 }
 let discoverButton = document.querySelector("#discover-search");
 discoverButton.addEventListener("submit", search);
@@ -120,3 +85,11 @@ discoverButton.addEventListener("submit", search);
 
 // let button = document.querySelector("currentLocation");
 // button.addEventListener("click", getCurrentPosition);
+
+// function showCelsiusLinkTemp(event) {
+//   event.preventDefault();
+//   let celsiusTemperature = (68−32)*5/9;
+// }
+
+let celsiusLink = document.querySelector("celsius-link");
+celsiusLink.addEventListener("click", showCelsiusLinkTemp);

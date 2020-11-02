@@ -53,3 +53,7 @@ h1 {
   margin-bottom: 0;
   text-transform: capitalize;
 }
+
+.units {
+  font-size: 10px;
+}
