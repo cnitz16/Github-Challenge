@@ -57,3 +57,11 @@ h1 {
 .units {
   font-size: 16px;
 }
+
+.quote {
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block;
+  width: 50%;
+  font-size: 50px;
+}
