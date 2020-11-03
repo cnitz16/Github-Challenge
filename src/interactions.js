@@ -43,6 +43,7 @@ if (currentHour > 12) {
 currentTime.innerHTML = `${currentDay} ${currentMonth} ${currentDate}, ${currentHour}:${currentMinute}`;
 
 function showTemperature(response) {
+  let currentCity = document.querySelector("#city-name");
   let mainTemp = document.querySelector("#something");
   let realFeel = document.querySelector("#realFeel");
   let currentHumidity = document.querySelector("#humidityLevel");
@@ -53,6 +54,7 @@ function showTemperature(response) {
 
   fahrenheitTemp = response.data.main.temp;
 
+  currentCity.innerHTML = response.data.name;
   mainTemp.innerHTML = Math.round(fahrenheitTemp);
   realFeel.innerHTML = Math.round(response.data.main.feels_like);
   currentHumidity.innerHTML = Math.round(response.data.main.humidity);
