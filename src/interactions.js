@@ -91,5 +91,12 @@ discoverButton.addEventListener("submit", search);
 //   let celsiusTemperature = (68−32)*5/9;
 // }
 
-let celsiusLink = document.querySelector("celsius-link");
+function showCelsiusLinkTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#something");
+  let celsiusTemp = ((tempElement.innerHTML - 32) * 5) / 9;
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusLinkTemp);
