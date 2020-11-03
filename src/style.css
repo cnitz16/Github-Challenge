@@ -1,6 +1,6 @@
 section {
   background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
-  max-width: 1200px;
+  max-width: 800px;
   border: 1px solid white;
   margin: 75px;
   border-radius: 10px;
@@ -56,12 +56,4 @@ h1 {
 
 .units {
   font-size: 16px;
-}
-
-.quote {
-  text-align: center;
-  margin: 0 auto;
-  display: inline-block;
-  width: 50%;
-  font-size: 50px;
 }
